@@ -1,6 +1,6 @@
 if [[ -x `which keychain` ]] && [ -r ~/.ssh/id_?sa ] ; then
     # run keychain
-    keychain --nogui ~/.ssh/id_?sa
+    keychain --inherit any-once --nogui ~/.ssh/id_?sa
     [[ -r ~/.ssh-agent-`hostname` ]] && . ~/.ssh-agent-`hostname`
     [[ -r ~/.keychain/`hostname`-sh ]] &&  source ~/.keychain/`hostname`-sh
     [[ -r ~/.keychain/`hostname`-sh-gpg ]] &&  source ~/.keychain/`hostname`-sh-gpg
