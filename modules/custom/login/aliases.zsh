@@ -12,61 +12,22 @@ alias lh="ls -lh"
 alias lsd='ls -ld *(-/DN)'
 alias df="df -h"
 
-# zsh corret clea to flea
-[[ -x `which flea` ]] && alias clea="clear"
-
-[[ -x $(which vim) ]] && alias vi="vim"
-
-# start mutt with list mailboxes
-[[ -x `which mutt` ]] && alias mutt="mutt -y"
+[[ -x $(whence -p vim) ]] && alias vi="vim"
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir 2>/dev/null;fi;done"
 
-# misc
-[[ -x `which makepasswd` ]] && alias makepasswd="makepasswd | tr A-Z a-z"
-
-# Minicom (serial console rulez)
-[[ -x `which minicom` ]] && alias minicom="minicom -o" 
-
-# Aterm 
-[[ -x `which aterm` ]] && alias aterm="aterm -bg black -fg AntiqueWhite +sb --geometry 110x48+112+32"
-
-# ping (since control-c don't work for break ping)
-alias ping="ping -c 3"
-
 # IPv6 Stuff
 alias netstat6="netstat -A inet6"
 
-# Indent
-[[ -x `which indent` ]] && alias indent="indent -kr"
-
-# acpi (show all available informations)
-[[ -x `which acpi` ]] && alias acpi="acpi -V"
-
-# Etags
-[[ -x `which etags` ]] && alias etags="etags --members"
-
-# rdesktop
-[[ -x `which rdesktop` ]] && alias rdesktop="rdesktop -u Administrator -a 8 -g 800x600 -k fr"
-
-alias gnus='emacs -f gnus -nw'
-
 alias -s log="tail -f"
-alias -s conf="vim"
 
 alias -s pem="openssl x509 -text -noout -in"
 alias -s req="openssl req -text -in"
 
-
 # ssh key management
 if [[ "$USER" != "root" ]]; then
 	ssh_key_manage
-fi
-
-# cron / fcronb
-if [[ -x $(which -p fcron) ]]; then
-	alias crontab="fcrontab"
 fi
 
 return 0
