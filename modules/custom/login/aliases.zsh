@@ -3,14 +3,17 @@
 # $Id: alias.rc 44 2005-08-09 14:50:41Z asyd $
 
 # I prefer interactive mode
-alias mv="mv -i"
-alias rm="rm -i"
+alias mkdir='mkdir -p -v'
+alias mv='timeout 8 mv -iv'
+alias rm='timeout 3 rm -Iv --one-file-system'
 alias cp="cp -i"
 alias ll="ls -l"
 alias la="ls -a"
 alias lh="ls -lh"
 alias lsd='ls -ld *(-/DN)'
 alias df="df -h"
+alias less="vimpager"
+alias ip="ip -c"
 
 [[ -x $(whence -p vim) ]] && alias vi="vim"
 
