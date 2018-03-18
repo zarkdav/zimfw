@@ -1,6 +1,6 @@
 if [[ -x `which keychain` ]] ; then
     # run keychain
-    keychain --inherit any-once --nogui id_rsa id_dsa id_ecdsa
+    keychain --inherit any-once id_rsa
     [[ -r ~/.ssh-agent-`hostname` ]] && . ~/.ssh-agent-`hostname`
     [[ -r ~/.keychain/`hostname`-sh ]] &&  source ~/.keychain/`hostname`-sh
     [[ -r ~/.keychain/`hostname`-sh-gpg ]] &&  source ~/.keychain/`hostname`-sh-gpg

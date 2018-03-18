@@ -17,7 +17,7 @@ alias la="ls -a"
 alias lh="ls -lh"
 alias lsd='ls -ld *(-/DN)'
 alias df="df -h"
-alias less="vimpager"
+alias less=$PAGER
 alias ip="ip -c"
 
 [[ -x $(whence -p vim) ]] && alias vi="vim"
@@ -28,6 +28,8 @@ alias -s log="tail -f"
 
 alias -s pem="openssl x509 -text -noout -in"
 alias -s req="openssl req -text -in"
+
+ssh_key_manage
 
 zim_login=${ZDOTDIR:-${HOME}}/.zim/modules/custom/login
 if [[ -o login && -d ${zim_login} ]]
