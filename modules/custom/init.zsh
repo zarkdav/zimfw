@@ -5,8 +5,17 @@
 # any custom stuff should go here.
 # ensure that 'custom' exists in the zmodules array in your .zimrc
 
-export PAGER=vimpager
-export VISUAL=vim
+if [[ -x $(whence -p vimpager) ]]
+then
+    export PAGER=vimpager
+    alias less=$PAGER
+fi
+
+if [[ -x $(whence -p vim) ]]
+then
+    export VISUAL=vim
+    alias vi="vim"
+fi
 
 alias mkdir='mkdir -p -v'
 alias mv='timeout 8 mv -iv'
@@ -17,10 +26,8 @@ alias la="ls -a"
 alias lh="ls -lh"
 alias lsd='ls -ld *(-/DN)'
 alias df="df -h"
-alias less=$PAGER
 alias ip="ip -c"
 
-[[ -x $(whence -p vim) ]] && alias vi="vim"
 
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir 2>/dev/null;fi;done"
 
