@@ -9,6 +9,7 @@ if [[ -x $(whence -p vimpager) ]]
 then
     export PAGER=vimpager
     alias less=$PAGER
+    alias zless=$PAGER
 fi
 
 if [[ -x $(whence -p vim) ]]
