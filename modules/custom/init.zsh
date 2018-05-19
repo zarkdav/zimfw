@@ -5,7 +5,7 @@
 # any custom stuff should go here.
 # ensure that 'custom' exists in the zmodules array in your .zimrc
 
-if [[ -x $(whence -p vimpager) ]]
+if [[ -x $(whence -p vimpager) && $vimpager = "y" ]]
 then
     export PAGER=vimpager
     alias less=$PAGER
