@@ -19,6 +19,11 @@ then
     fi
 fi
 
+if [[ -x $HOME/.local/bin/grabssh ]]
+then
+    alias screen="$HOME/.local/bin/grabssh && screen"
+fi
+
 alias mkdir='mkdir -p -v'
 alias mv='timeout 8 mv -iv'
 alias rm='timeout 3 rm -Iv --one-file-system'
