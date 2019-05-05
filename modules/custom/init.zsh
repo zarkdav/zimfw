@@ -5,13 +5,13 @@
 # any custom stuff should go here.
 # ensure that 'custom' exists in the zmodules array in your .zimrc
 
-if [[ -x $(whence -p vim) ]]
+if (( $+commands[vim] ))
 then
     export VISUAL=vim
     alias vi="vim"
 
     vim_version=$(vim --version | head -1 | grep -o '[0-9]\.[0-9]')
-    if [[ -x $(whence -p vimpager) && $(echo "$vim_version >= 8.0" | bc -l) ]]
+    if [[ $+commands[vimpager] -eq 1 && $vim_version -ge 8.0 ]]
     then
         export PAGER=vimpager
         alias less=$PAGER
