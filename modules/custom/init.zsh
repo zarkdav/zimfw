@@ -11,7 +11,7 @@ then
     alias vi="vim"
 
     vim_version=$(vim --version | head -1 | grep -o '[0-9]\.[0-9]')
-    if [[ $+commands[vimpager] -eq 1 && $$vim_version -ge 8.0 ]]
+    if [[ $+commands[vimpager] -eq 1 && $vim_version -ge 8.0 ]]
     then
         export PAGER=vimpager
         alias less=$PAGER
