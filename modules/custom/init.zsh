@@ -19,9 +19,9 @@ then
     fi
 fi
 
-if [[ -x $HOME/.local/bin/grabssh ]]
+if [[ -x grabssh ]]
 then
-    alias screen="$HOME/.local/bin/grabssh && screen"
+    alias screen="grabssh && screen"
 fi
 
 alias mkdir='mkdir -p -v'
