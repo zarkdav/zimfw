@@ -15,7 +15,7 @@ then
     fi
 fi
 
-if [[ -x grabssh ]]
+if (( $+commands[grabssh] ))
 then
     alias screen="grabssh && screen"
 fi
