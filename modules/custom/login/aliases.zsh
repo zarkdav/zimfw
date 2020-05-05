@@ -3,7 +3,7 @@
 
 if (( $+commands[vim] ))
 then
-    export VISUAL=vim
+    export VISUAL=$commands[vim]
     alias vi="vim"
 
     vim_version=$(vim --version | head -1 | grep -o '[0-9]\.[0-9]')
